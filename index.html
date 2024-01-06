@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid color template</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:sans-serif;
+        }
+        
+        .navbar{
+            grid-area:navbar;
+            background:rgb(249, 148, 25);
+        }
+        .header{
+            grid-area:header;
+            background:rgb(53, 72, 245);
+       }
+        .main{
+            grid-area:main;
+            background:rgb(246, 33, 33);
+        }
+        .footer{
+            grid-area:footer;
+            background:rgb(32, 250, 108);    
+        }
+        .container{
+            /* position:relative; */
+            height:100vh;
+            color: #fff;
+            display:grid;
+            grid-template-areas: 
+            'navbar header '
+            'navbar main '
+            'navbar footer';
+            grid-template-columns: 2fr 5fr;
+            grid-template-rows:1fr 5fr 1fr;
+        }
+        div{
+            font-size:2rem;
+            font-weight:700;
+            height:100%;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+        }
+        @media(max-width:500px){
+            .container{
+                grid-template-areas:
+                'navbar'
+                'header'
+                'main'
+                'footer';
+                grid-template-rows: 1fr 1fr 4fr 1fr;
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            Navbar
+        </div>
+        <div class="header">
+            Header
+        </div>
+        <div class="main">
+            Main
+        </div>
+        <div class="footer">
+            Footer
+        </div>
+    </div>
+</body>
+</html>
